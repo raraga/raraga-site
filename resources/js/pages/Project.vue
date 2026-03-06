@@ -1,6 +1,7 @@
-<script>
+<script setup lang="ts">
+    const props = defineProps(['slug'])
 </script>
 
 <template>
-    This is the new project view.
+    The slug of this project is: {{ props.slug }}
 </template>

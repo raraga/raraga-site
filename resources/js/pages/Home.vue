@@ -6,13 +6,13 @@ const profileImage = ref('storage/s.jpg');
 const projects = [
     {
         title: 'BK Precision',
-        description: 'Description of the first project goes here.',
+        description: 'For over 70 years, B&K Precision is a leading provider in test and measurement solutions.',
         image: 'storage/bk-home.jpg',
         slug: 'bk-precision',
     },
     {
         title: 'MyBK',
-        description: 'Description of the second project goes here.',
+        description: 'MyBK is a customer portal made to provide continued product support for B&K customers. From RMAs, calibrations and extended warranties.',
         image: 'storage/mybk-home.jpg',
         slug: 'mybk',
 
