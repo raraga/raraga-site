@@ -11,6 +11,11 @@ Route::inertia('/', 'Home', [
     'canRegister' => Features::enabled(Features::registration()),
 ])->name('home');
 
+Route::inertia('/project/{slug}', 'Project')->name('view.project');
+
+Route::get('/test', function() {
+    echo 'This is a test for Ziggy.';
+})->name('test');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::inertia('dashboard', 'Dashboard')->name('dashboard');

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import { Link } from '@inertiajs/vue3';
 
 const profileImage = ref('storage/s.jpg');
 const projects = [
@@ -7,11 +8,13 @@ const projects = [
         title: 'BK Precision',
         description: 'Description of the first project goes here.',
         image: 'storage/bk-home.jpg',
+        slug: 'bk-precision',
     },
     {
         title: 'MyBK',
         description: 'Description of the second project goes here.',
         image: 'storage/mybk-home.jpg',
+        slug: 'mybk',
 
     },
 ];
@@ -91,6 +94,7 @@ const projects = [
                         :key="project.title"
                         class="group rounded-2xl bg-gray-50 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:cursor-pointer hover:shadow-md dark:bg-gray-800"
                     >
+                    <Link :href="route('view.project', project.slug)">
                         <div
                             class="mb-4 h-40 overflow-hidden rounded-xl bg-gray-400"
                         >
@@ -111,6 +115,7 @@ const projects = [
                         >
                             {{ project.description }}
                         </p>
+                    </Link>
                     </div>
                 </div>
             </div>
