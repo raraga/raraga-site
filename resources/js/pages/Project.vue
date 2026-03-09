@@ -44,10 +44,10 @@ const props = defineProps<{
                 <div class="grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
                     <div class="order-2 lg:order-1">
                         <h1 class="mb-4 text-4xl font-bold text-white">
-                            {{ project.title }}
+                            {{ props.project.title }}
                         </h1>
                         <p class="mb-6 text-lg text-gray-300">
-                            {{ project.description }}
+                            {{ props.project.description }}
                         </p>
                         <a
                             :href="project.url"
@@ -91,7 +91,7 @@ const props = defineProps<{
                         About This Project
                     </h2>
                     <p class="leading-relaxed text-gray-300">
-                        {{ project.extendedDescription }}
+                        {{ props.project.extendedDescription }}
                     </p>
                 </div>
             </div>
@@ -114,7 +114,7 @@ const props = defineProps<{
                         <a :href="project.links[index]" target="_blank">
                             <img
                                 :src="'../'+ img"
-                                :alt="`${project.title} screenshot ${index + 1}`"
+                                :alt="`${props.project.title} screenshot ${index + 1}`"
                                 class="h-full w-full object-cover object-top"
                             />
                         </a>
