@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
+import Footer from '@/components/Footer.vue';
 
 const props = defineProps<{
     project: {
@@ -13,17 +14,15 @@ const props = defineProps<{
         links: Array<string>;
     };
 }>();
-
 </script>
 
 <template>
-    <div class="pt-16 bg-sky-950 min-h-screen">
+    <div class="min-h-screen bg-sky-950 pt-16">
         <div class="px-6 py-8 lg:px-8">
             <div class="mx-auto max-w-7xl">
                 <Link
                     href="/"
-                    class="mb-8 font-bold inline-flex items-center text-md
-                    text-gray-300 hover:text-sky-500"
+                    class="text-md mb-8 inline-flex items-center font-bold text-gray-300 hover:text-sky-500"
                 >
                     <svg
                         class="mr-2 h-4 w-4"
@@ -73,11 +72,11 @@ const props = defineProps<{
                     </div>
                     <div class="order-1 lg:order-2">
                         <div class="overflow-hidden rounded-2xl shadow-lg">
-                                <img
-                                    :src="'../'+ project.image"
-                                    :alt="project.title"
-                                    class="h-64 w-full object-cover object-top sm:h-80"
-                                />
+                            <img
+                                :src="'../' + project.image"
+                                :alt="project.title"
+                                class="h-64 w-full object-cover object-top sm:h-80"
+                            />
                         </div>
                     </div>
                 </div>
@@ -110,18 +109,17 @@ const props = defineProps<{
                         :key="index"
                         class="aspect-video overflow-hidden rounded-xl shadow-lg"
                     >
-
                         <a :href="project.links[index]" target="_blank">
                             <img
-                                :src="'../'+ img"
+                                :src="'../' + img"
                                 :alt="`${props.project.title} screenshot ${index + 1}`"
                                 class="h-full w-full object-cover object-top"
                             />
                         </a>
-
                     </div>
                 </div>
             </div>
         </div>
+        <Footer />
     </div>
 </template>

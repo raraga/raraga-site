@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { Link } from '@inertiajs/vue3';
+import Footer from '@/components/Footer.vue';
 
 const profileImage = ref('storage/s.jpg');
 const projects = [
@@ -179,5 +180,6 @@ const projects = [
                 </div>
             </div>
         </div>
+        <Footer />
     </div>
 </template>
